@@ -32,12 +32,13 @@ pass_p3 = round(strng * (50/100))
 password = []
 
 for i in range(pass_p1):
-    password.append(list1[i])
-    password.append(list2[i])
+    password.append(list1[i % len(list1)])
+    password.append(list2[i % len(list2)])
 
 for i in range(pass_p3):
-    password.append(list3[i])
-    password.append(list4[i])
-password="".join(password[0:])
+    password.append(list3[i % len(list3)])
+    password.append(list4[i % len(list4)])
+ran.shuffle(password)
+password="".join(password[0:strng])
 
 print("your password is: "+ password)
